@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arya Lakshmi M P – Computer Science Engineer</title>
+<title>Arya Lakshmi – Computer Science Engineer</title>
 <meta name="description" content="Portfolio of Arya Lakshmi: full-stack and DevOps projects, built in Kerala, India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +64,15 @@ nav .links a:hover{color:var(--text)}
 .metric{font-weight:600;color:var(--text)!important}
 .tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0;list-style:none}
 .tags li{font-size:.8rem;background:var(--chip);padding:3px 10px;border-radius:999px;font-weight:500}
-.card a.link{margin-top:auto;font-weight:600;color:var(--accent);padding:8px 0;display:inline-block}
+.card .link{margin-top:auto;font:600 1rem Inter,system-ui,sans-serif;color:var(--accent);padding:12px 0;background:none;border:0;text-align:left;cursor:pointer;text-decoration:underline}
+dialog{max-width:640px;width:calc(100% - 32px);max-height:88vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--text);padding:28px;position:fixed}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h2{font-size:1.7rem;margin-bottom:12px}
+dialog h3{font-size:1rem;color:var(--warm);margin:20px 0 6px}
+dialog p{margin:0 0 8px;color:var(--muted)}
+dialog ul:not(.tags){margin:0;padding-left:20px;color:var(--muted)}
+dialog li{margin-bottom:6px}
+.x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer}
 .case{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
 .steps{display:grid;gap:20px;grid-template-columns:1fr;margin-top:20px}
 .steps h3{font-size:1rem;color:var(--warm);margin-bottom:6px}
@@ -123,7 +131,7 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
         <p class="metric">One-click Docker deploys on low-resource VPS</p>
         <p>Problem: deploying and monitoring containers on small servers is manual and error-prone.</p>
         <ul class="tags"><li>Docker</li><li>GitHub</li><li>Linux</li><li>React</li></ul>
-        <a class="link" href="#" aria-label="Light Deploy on GitHub">View on GitHub →</a>
+        <button class="link" type="button" data-open="d-ld">View details →</button>
       </div>
     </article>
     <article class="card">
@@ -133,7 +141,7 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
         <p class="metric">Pickup requests to recycling, tracked end to end</p>
         <p>Problem: people lack an easy path to dispose of e-waste responsibly.</p>
         <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li></ul>
-        <a class="link" href="#" aria-label="Green Circuit on GitHub">View on GitHub →</a>
+        <button class="link" type="button" data-open="d-gc">View details →</button>
       </div>
     </article>
     <article class="card">
@@ -143,7 +151,7 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
         <p class="metric">Students, faculty, attendance and courses in one app</p>
         <p>Problem: academic admin is spread across disconnected processes.</p>
         <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li></ul>
-        <a class="link" href="#" aria-label="Campus Connect on GitHub">View on GitHub →</a>
+        <button class="link" type="button" data-open="d-cc">View details →</button>
       </div>
     </article>
   </div>
@@ -196,7 +204,72 @@ footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
     </div>
   </div>
 </section>
+
+<dialog id="d-ld" aria-labelledby="d-ld-t">
+  <button class="x" type="button" data-close aria-label="Close">✕</button>
+  <p class="eyebrow">Project</p>
+  <h2 id="d-ld-t">Light Deploy</h2>
+  <p>A lightweight, self-hosted platform that automates deploying, monitoring and managing containerized applications on low-resource VPS environments.</p>
+  <h3>The problem</h3>
+  <p>Small servers can't run heavyweight deployment platforms, so deploys end up manual, slow and hard to monitor.</p>
+  <h3>What I built</h3>
+  <ul>
+    <li>GitHub integration to pull code straight from repositories</li>
+    <li>Docker-based one-click deployment</li>
+    <li>Container management: start, stop and redeploy from one place</li>
+    <li>Application monitoring and log viewing</li>
+    <li>A footprint small enough for low-resource VPS machines</li>
+  </ul>
+  <h3>Tools</h3>
+  <ul class="tags"><li>Docker</li><li>GitHub</li><li>Linux</li><li>React</li></ul>
+</dialog>
+
+<dialog id="d-gc" aria-labelledby="d-gc-t">
+  <button class="x" type="button" data-close aria-label="Close">✕</button>
+  <p class="eyebrow">Project</p>
+  <h2 id="d-gc-t">Green Circuit</h2>
+  <p>A comprehensive web-based e-waste management platform that supports responsible waste disposal, recycling and environmental awareness.</p>
+  <h3>The problem</h3>
+  <p>People often don't know how or where to dispose of electronic waste responsibly, and recycling centers lack a simple way to receive and track it.</p>
+  <h3>What I built</h3>
+  <ul>
+    <li>User authentication for secure sign-up and login</li>
+    <li>E-waste pickup requests submitted by users</li>
+    <li>Recycling center management</li>
+    <li>Waste tracking from request to recycling</li>
+    <li>Awareness modules that teach responsible disposal</li>
+  </ul>
+  <h3>Tools</h3>
+  <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li></ul>
+</dialog>
+
+<dialog id="d-cc" aria-labelledby="d-cc-t">
+  <button class="x" type="button" data-close aria-label="Close">✕</button>
+  <p class="eyebrow">Project</p>
+  <h2 id="d-cc-t">Campus Connect</h2>
+  <p>A comprehensive campus management web application that streamlines academic and administrative processes and makes managing students more efficient.</p>
+  <h3>The problem</h3>
+  <p>Student records, attendance, courses and announcements are often spread across disconnected tools and manual processes.</p>
+  <h3>What I built</h3>
+  <ul>
+    <li>Student and faculty management</li>
+    <li>Attendance tracking</li>
+    <li>Course management</li>
+    <li>Announcements for the campus community</li>
+    <li>Role-based authentication, so each user sees only what they need</li>
+  </ul>
+  <h3>Tools</h3>
+  <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MySQL</li></ul>
+</dialog>
 </main>
 <footer><div class="wrap">© 2026 Arya Lakshmi · Thrissur, Kerala</div></footer>
+<script>
+document.querySelectorAll('[data-open]').forEach(function(b){
+  b.addEventListener('click',function(){document.getElementById(b.dataset.open).showModal();});
+});
+document.querySelectorAll('dialog').forEach(function(d){
+  d.addEventListener('click',function(e){if(e.target===d||e.target.hasAttribute('data-close'))d.close();});
+});
+</script>
 </body>
 </html>
